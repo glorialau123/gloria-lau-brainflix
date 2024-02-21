@@ -1,5 +1,6 @@
 //import other scss files?
-@use "./styles/partials/_typography.scss";
+@use "./styles/partials/_typography.scss" as *;
+@use "./styles/partials/_variables.scss" as *;
 
 * {
   box-sizing: border-box;
@@ -7,6 +8,10 @@
   margin: 0;
 }
 
+body {
+  font-family: "AvenirNext LT Pro", Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .App {
-  font-family: "AvenirNext LT Pro";
+  background-color: $background-color;
 }

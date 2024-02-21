@@ -4,16 +4,18 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function Header() {
   return (
-    <div className="header__title">
+    <header className="header">
       <div className="header__logo">
         <img src={logo} alt="BrainFlix logo" className="header__logo-icon" />
       </div>
-      <div className="header__searching">
-        <input type="text" className="header__search" placeholder="Search" />
-        <img src={avatar} alt="" className="header__avatar" />
+      <div className="header__upload">
+        <div className="header__searching">
+          <input type="text" className="header__search" placeholder="Search" />
+          <img src={avatar} alt="" className="header__avatar" />
+        </div>
         <button className="header__button">UPLOAD</button>
       </div>
-    </div>
+    </header>
   );
 }
 
