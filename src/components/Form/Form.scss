@@ -4,16 +4,40 @@
 
 .form {
   display: flex;
-  justify-content: space-between;
   margin: 0 1rem 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid $secondary-divider-color;
+  @include tablet {
+    margin: 0 2.25rem 0;
+    padding: 1rem 0;
+  }
   &__form {
-    width: 83%;
+    width: 100%;
+    position: relative;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+    &::before {
+      content: "JOIN THE CONVERSATION";
+      position: absolute;
+      display: none;
+      top: -1rem;
+      color: $secondary-text-color;
+      @include mobile-subheader-text;
+      @include tablet {
+        display: block;
+      }
+    }
   }
   &__area {
     width: 100%;
     padding: 0 0 1rem;
+    @include tablet {
+      width: 70%;
+      margin-right: 1.5rem;
+      padding: 0;
+    }
   }
   &__avatar {
     border-radius: 50%;
@@ -21,11 +45,19 @@
     height: 2.25rem;
     object-fit: cover;
     object-position: left;
-    margin-top: 1.5rem;
+    margin: 1.5rem 1rem 0 0;
+    @include tablet {
+      max-width: 2.5rem;
+      height: 2.5rem;
+      margin: 0 1rem 0 0;
+    }
   }
   &__label {
     color: $secondary-text-color;
     @include mobile-subheader-text;
+    @include tablet {
+      display: none;
+    }
   }
   &__input {
     resize: none;
@@ -37,6 +69,11 @@
     min-height: 5rem;
     padding: 0.813rem;
     width: 100%;
+
+    @include tablet {
+      padding: 0;
+      min-height: 2.5rem;
+    }
   }
 
   &__button {
@@ -48,5 +85,9 @@
     font-family: "AvenirNext LT Pro", Verdana, Geneva, Tahoma, sans-serif;
     border: none;
     @include mobile-label-button-text;
+    @include tablet {
+      width: 30%;
+      @include tablet-desktop-button-label-text;
+    }
   }
 }

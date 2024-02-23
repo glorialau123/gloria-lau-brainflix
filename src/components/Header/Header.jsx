@@ -14,6 +14,7 @@ function Header() {
           <img src={avatar} alt="" className="header__avatar" />
         </div>
         <button className="header__button">UPLOAD</button>
+        <img src={avatar} alt="" className="header__avatar header__avatar--hidden" />
       </div>
     </header>
   );

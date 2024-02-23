@@ -1,4 +1,13 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .video {
-  width: 100%;
-  border-radius: 0;
+  background-color: $secondary-video-color;
+  &__player {
+    width: 100%;
+    border-radius: 0;
+    @include tablet {
+      padding: 0rem 2.25rem;
+    }
+  }
 }

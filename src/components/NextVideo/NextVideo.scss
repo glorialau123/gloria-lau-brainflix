@@ -3,6 +3,9 @@
 @use "../../styles/partials/variables" as *;
 
 .videos {
+  @include tablet {
+    padding: 1rem 2.25rem 1.5rem;
+  }
   padding: 0 1rem 1.5rem;
   &__item {
     display: flex;
@@ -14,7 +17,10 @@
   }
   &__image {
     height: 4rem;
+    max-width: 6.5rem;
     margin-right: 1rem;
+    background-color: $secondary-divider-color;
+    border-radius: 4px;
   }
 
   &__title {
@@ -26,5 +32,9 @@
     @include mobile-subheader-text;
     color: $primary-text-color;
     font-size: bold;
+  }
+  &__author {
+    @include mobile-body-text;
+    color: $primary-text-color;
   }
 }

@@ -9,7 +9,9 @@ function Description(props) {
       <div className="description__details">
         <div className="description__authoring">
           <p className="description__author">By {props.selectedVideo.channel}</p>
-          <p className="description__date">{props.selectedVideo.timestamp}</p>
+          <p className="description__date">
+            {new Date(props.selectedVideo.timestamp).toLocaleDateString()}
+          </p>
         </div>
         <div className="description__interact">
           <div className="description__visibility">

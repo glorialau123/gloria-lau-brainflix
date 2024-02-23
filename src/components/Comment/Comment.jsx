@@ -9,7 +9,9 @@ function Comment(props) {
       <div className="comments__info">
         <div className="comments__header">
           <h2 className="comments__name">{person.name}</h2>
-          <p className="comments__date">{person.timestamp}</p>
+          <p className="comments__date">
+            {new Date(person.timestamp).toLocaleDateString()}
+          </p>
         </div>
         <p className="comments__text">{person.comment}</p>
       </div>

@@ -8,27 +8,49 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid $secondary-divider-color;
     text-align: left;
+    @include tablet {
+      @include tablet-desktop-page-text;
+      margin: 1.5rem 2.25rem 1rem;
+      border: none;
+    }
   }
   &__details {
     display: flex;
     justify-content: flex-start;
     margin: 0 1rem 1rem;
-    padding-bottom: 1rem;
+    padding: 0 0 1rem;
     border-bottom: 1px solid #e1e1e1;
     @include mobile-body-text;
     color: $secondary-text-color;
+    @include tablet {
+      justify-content: space-between;
+      margin: 0 2.25rem 1rem;
+      padding: 0;
+    }
   }
   &__authoring {
     margin-right: 2rem;
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+    }
   }
   &__author {
     @include mobile-body-text;
     font-weight: bold;
     color: $primary-text-color;
     padding-bottom: 1rem;
+    @include tablet {
+      margin-right: 2.25rem;
+    }
   }
   &__interact {
     width: 30%;
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+      width: 25%;
+    }
   }
 
   &__visibility {
@@ -40,18 +62,33 @@
   }
   &__like {
     display: flex;
+    @include tablet {
+      margin-left: 2.25rem;
+    }
   }
   &__like-icon {
     margin-right: 0.5rem;
+    @include tablet {
+      padding-bottom: 1rem;
+    }
   }
 
   &__paragraph {
     padding: 0rem 1rem 1rem;
     @include mobile-body-text;
+    @include tablet {
+      padding: 0rem 2.25rem 1rem;
+      @include tablet-desktop-body-text;
+    }
   }
   &__comments {
     @include mobile-body-text;
     font-weight: bold;
     padding: 0.5rem 1rem 1rem;
+    @include tablet {
+      padding: 0.5rem 2.25rem 1.5rem;
+      @include tablet-desktop-body-text;
+      font-weight: bold;
+    }
   }
 }
