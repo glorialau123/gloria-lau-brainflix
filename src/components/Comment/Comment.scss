@@ -1,0 +1,56 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.comments {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem 1rem;
+    border-bottom: 1px solid $secondary-divider-color;
+    @include tablet {
+      margin: 0 0 1rem;
+    }
+    @include desktop {
+      margin: 1rem 0 0;
+    }
+  }
+  &__image {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+    background-color: $secondary-divider-color;
+    border-radius: 50%;
+    @include tablet {
+      height: 3rem;
+      width: 3rem;
+      margin-right: 2rem;
+    }
+  }
+  &__info {
+    @include column-flex;
+    width: 83%;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    @include mobile-subheader-text;
+    color: $primary-text-color;
+  }
+  &__date {
+    @include mobile-body-text;
+    color: $secondary-text-color;
+  }
+  &__text {
+    @include mobile-body-text;
+    color: $primary-text-color;
+    padding: 1rem 0;
+  }
+}

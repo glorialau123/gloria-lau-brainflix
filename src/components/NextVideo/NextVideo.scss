@@ -1,0 +1,30 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.videos {
+  padding: 0 1rem 1.5rem;
+  &__item {
+    display: flex;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__image {
+    height: 4rem;
+    margin-right: 1rem;
+  }
+
+  &__title {
+    color: $secondary-text-color;
+    @include mobile-subheader-text;
+    padding: 0.5rem 0 1rem 0rem;
+  }
+  &__subheading {
+    @include mobile-subheader-text;
+    color: $primary-text-color;
+    font-size: bold;
+  }
+}

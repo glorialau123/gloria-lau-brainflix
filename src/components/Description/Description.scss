@@ -7,6 +7,51 @@
     margin: 1.5rem 1rem 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid $secondary-divider-color;
-    text-align: center;
+    text-align: left;
+  }
+  &__details {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 1rem 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+    @include mobile-body-text;
+    color: $secondary-text-color;
+  }
+  &__authoring {
+    margin-right: 2rem;
+  }
+  &__author {
+    @include mobile-body-text;
+    font-weight: bold;
+    color: $primary-text-color;
+    padding-bottom: 1rem;
+  }
+  &__interact {
+    width: 30%;
+  }
+
+  &__visibility {
+    padding-bottom: 1rem;
+    display: flex;
+  }
+  &__visibility-icon {
+    margin-right: 0.5rem;
+  }
+  &__like {
+    display: flex;
+  }
+  &__like-icon {
+    margin-right: 0.5rem;
+  }
+
+  &__paragraph {
+    padding: 0rem 1rem 1rem;
+    @include mobile-body-text;
+  }
+  &__comments {
+    @include mobile-body-text;
+    font-weight: bold;
+    padding: 0.5rem 1rem 1rem;
   }
 }
