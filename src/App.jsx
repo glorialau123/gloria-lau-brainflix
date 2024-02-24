@@ -10,8 +10,8 @@ import Comment from "./components/Comment/Comment";
 import NextVideo from "./components/NextVideo/NextVideo";
 
 function App() {
-  console.log(videoDetails);
   const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
+  const [videos, setVideos] = useState(videoDetails);
 
   return (
     <div className="App">
@@ -23,7 +23,12 @@ function App() {
           <Form />
           <Comment selectedVideo={selectedVideo} />
         </div>
-        <NextVideo />
+        <NextVideo
+          videos={videos}
+          setVideos={setVideos}
+          selectedVideo={selectedVideo}
+          setSelectedVideo={setSelectedVideo}
+        />
       </main>
     </div>
   );
