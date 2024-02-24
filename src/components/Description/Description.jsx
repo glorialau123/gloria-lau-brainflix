@@ -1,8 +1,11 @@
 import "./Description.scss";
 import eyeIcon from "../../assets/icons/views.svg";
 import likeIcon from "../../assets/icons/likes.svg";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 function Description(props) {
+  dayjs.extend(relativeTime);
   return (
     <section className="description">
       <h1 className="description__heading">{props.selectedVideo.title}</h1>
@@ -10,7 +13,7 @@ function Description(props) {
         <div className="description__authoring">
           <p className="description__author">By {props.selectedVideo.channel}</p>
           <p className="description__date">
-            {new Date(props.selectedVideo.timestamp).toLocaleDateString()}
+            {dayjs(props.selectedVideo.timestamp).fromNow()}
           </p>
         </div>
         <div className="description__interact">

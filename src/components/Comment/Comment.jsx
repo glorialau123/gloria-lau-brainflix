@@ -1,6 +1,10 @@
 import "./Comment.scss";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 function Comment(props) {
+  dayjs.extend(relativeTime);
+
   const selectedVideoComments = props.selectedVideo.comments;
 
   const selectedVideoPerson = selectedVideoComments.map((person) => (
@@ -9,9 +13,7 @@ function Comment(props) {
       <div className="comments__info">
         <div className="comments__header">
           <h2 className="comments__name">{person.name}</h2>
-          <p className="comments__date">
-            {new Date(person.timestamp).toLocaleDateString()}
-          </p>
+          <p className="comments__date">{dayjs(person.timestamp).fromNow()}</p>
         </div>
         <p className="comments__text">{person.comment}</p>
       </div>
