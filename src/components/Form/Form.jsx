@@ -19,7 +19,6 @@ function Form() {
             placeholder="Add a new comment"
           ></textarea>
         </div>
-        <img src={commentIcon} alt="comment icon" className="form__comment-icon" />
         <button className="form__button">COMMENT</button>
       </form>
     </section>
