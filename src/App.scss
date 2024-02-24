@@ -1,6 +1,7 @@
 //import other scss files?
 @use "./styles/partials/_typography.scss" as *;
 @use "./styles/partials/_variables.scss" as *;
+@use "./styles/partials/_mixins.scss" as *;
 
 * {
   box-sizing: border-box;
@@ -14,4 +15,17 @@ body {
 
 .App {
   background-color: $background-color;
+}
+
+.main {
+  @include desktop {
+    display: flex;
+    padding: 0 6rem;
+  }
+}
+
+.collection {
+  @include desktop {
+    width: 70%;
+  }
 }

@@ -11,5 +11,8 @@
       padding: 0rem 2.25rem;
       height: 35vh;
     }
+    @include desktop {
+      padding: 0rem 21rem;
+    }
   }
 }

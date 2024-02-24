@@ -1,5 +1,6 @@
 import "./Form.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
+import commentIcon from "../../assets/icons/add_comment.svg";
 
 function Form() {
   return (
@@ -18,6 +19,7 @@ function Form() {
             placeholder="Add a new comment"
           ></textarea>
         </div>
+        <img src={commentIcon} alt="comment icon" className="form__comment-icon" />
         <button className="form__button">COMMENT</button>
       </form>
     </section>

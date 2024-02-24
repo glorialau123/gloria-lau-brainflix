@@ -3,13 +3,23 @@
 @use "../../styles/partials/variables" as *;
 
 .videos {
+  padding: 0 1rem 1.5rem;
+  border-left: 1px solid $secondary-divider-color;
   @include tablet {
     padding: 1rem 2.25rem 1.5rem;
   }
-  padding: 0 1rem 1.5rem;
+  @include desktop {
+    width: 35%;
+  }
   &__item {
     display: flex;
     margin-bottom: 1rem;
+    @include tablet {
+      width: 43%;
+    }
+    @include desktop {
+      width: 100%;
+    }
   }
   &__description {
     display: flex;

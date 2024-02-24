@@ -12,6 +12,11 @@
       @include tablet-desktop-page-text;
       margin: 1.5rem 2.25rem 1rem;
       border: none;
+      padding: 0;
+    }
+    @include desktop{
+      margin: 0;
+      padding: 1.5rem 2.25rem 1rem;
     }
   }
   &__details {
@@ -26,6 +31,10 @@
       justify-content: space-between;
       margin: 0 2.25rem 1rem;
       padding: 0;
+    }
+    @include desktop{
+      margin: 0;
+      padding: 0 2.25rem;
     }
   }
   &__authoring {
@@ -90,5 +99,8 @@
       @include tablet-desktop-body-text;
       font-weight: bold;
     }
+  }
+  &__text{
+    padding: 1rem 0;
   }
 }

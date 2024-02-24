@@ -20,19 +20,7 @@ function Comment(props) {
 
   return (
     <section className="comments">
-      <ul className="comments__list">
-        {selectedVideoPerson}
-        {/* <li className="comments__item">
-          <div className="comments__image"></div>
-          <div className="comments__info">
-            <div className="comments__header">
-              <h2 className="comments__name">Noah Duncan</h2>
-              <p className="comments__date">8/11/2023</p>
-            </div>
-            <p className="comments__text">Here is a nice comment.</p>
-          </div>
-        </li> */}
-      </ul>
+      <ul className="comments__list">{selectedVideoPerson}</ul>
     </section>
   );
 }
