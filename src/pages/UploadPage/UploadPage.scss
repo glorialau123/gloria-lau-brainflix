@@ -1,0 +1,24 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  border-top: 1px solid $secondary-divider-color;
+
+  &__heading {
+    @include mobile-page-header-text;
+    color: $primary-text-color;
+    margin: 1.5rem 1rem 1rem;
+    text-align: left;
+    @include tablet {
+      @include tablet-desktop-page-text;
+      padding: 2.25rem 0 2rem;
+      margin: 0 2.25rem 2rem;
+      border-bottom: 1px solid $secondary-divider-color;
+    }
+    @include desktop {
+      margin: 0 6rem;
+      padding: 2.25rem 0 2rem;
+    }
+  }
+}

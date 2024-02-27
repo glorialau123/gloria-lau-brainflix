@@ -1,0 +1,14 @@
+@use "../../styles/partials/mixins" as *;
+
+.main {
+  @include desktop {
+    display: flex;
+    padding: 0 6rem;
+  }
+}
+
+.collection {
+  @include desktop {
+    width: 70%;
+  }
+}

@@ -1,0 +1,149 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  &__label {
+    color: $secondary-text-color;
+    @include mobile-subheader-text;
+  }
+  &__container {
+    @include desktop {
+      display: flex;
+      padding: 1.5rem 6rem;
+    }
+  }
+  &__video-container {
+    padding: 0 1rem 1rem;
+    @include tablet {
+      padding: 0 2.25rem 1rem;
+      width: 60%;
+    }
+    @include desktop {
+      width: 50%;
+      padding: 0;
+      margin-right: 1.5rem;
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+  &__area-container {
+    @include column-flex;
+    padding: 0 1rem;
+    @include tablet {
+      padding: 0 2.25rem;
+    }
+    @include desktop {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  &__title,
+  &__description {
+    font-family: "AvenirNext LT Pro", Verdana, Geneva, Tahoma, sans-serif;
+    background-color: $secondary-form-color;
+    color: $primary-text-color;
+    border-radius: 4px;
+    border: 2px solid $secondary-divider-color;
+    padding: 0.5rem 1rem;
+    margin: 0 0 1.5rem;
+  }
+  &__description {
+    resize: none;
+    min-height: 5rem;
+    @include desktop {
+      min-height: 7rem;
+      margin: 0;
+    }
+  }
+  &__buttons {
+    @include column-flex;
+    align-items: center;
+    padding: 0 1rem;
+    position: relative;
+
+    @include tablet {
+      padding: 1.5rem 0;
+      margin: 0 2.25rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      border-top: 1px solid $secondary-divider-color;
+    }
+    @include desktop {
+      margin: 0 6rem;
+    }
+  }
+  &__publish,
+  &__cancel {
+    height: 2.5rem;
+    border: none;
+    font-family: "AvenirNext LT Pro", Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 2rem;
+    @include mobile-label-button-text;
+  }
+  &__publish {
+    width: 100%;
+    border-radius: 4px;
+    background-color: $primary-cta-color;
+    color: $background-color;
+    //show publish button for mobile
+    &--show {
+      display: block;
+      &::before {
+        position: absolute;
+        content: url("../../assets/icons/publish.svg");
+        top: 0.5rem;
+        left: 1.5rem;
+        @include tablet {
+          display: none;
+        }
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+    // show publish button for tablet/desktop view
+    &--hidden {
+      display: none;
+      @include tablet {
+        display: block;
+        width: 22%;
+        position: relative;
+      }
+      @include desktop {
+        width: 17%;
+      }
+      &::before {
+        position: absolute;
+        content: url("../../assets/icons/publish.svg");
+        display: none;
+        @include tablet {
+          display: block;
+          top: 0.5rem;
+          left: 0.5rem;
+        }
+      }
+    }
+  }
+  &__cancel {
+    width: 30%;
+    color: $primary-cta-color;
+    background: $background-color;
+    &--show {
+      display: block;
+      @include tablet {
+        display: none;
+      }
+    }
+    // visible for tablet/desktop view
+    &--hidden {
+      display: none;
+      @include tablet {
+        display: block;
+        width: 22%;
+      }
+    }
+  }
+}
