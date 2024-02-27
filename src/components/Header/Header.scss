@@ -85,6 +85,16 @@
       margin: 0 1rem 0 0;
     }
   }
+  &__link-button {
+    width: 100%;
+    @include tablet {
+      width: 35%;
+      margin: 0 1rem 0 0;
+    }
+    @include desktop {
+      width: 25%;
+    }
+  }
 
   &__button {
     width: 100%;
@@ -103,12 +113,7 @@
       left: 10px;
     }
     @include tablet {
-      width: 35%;
-      margin: 0 1rem 0 0;
       @include tablet-desktop-button-label-text;
-    }
-    @include desktop {
-      width: 25%;
     }
     &:hover {
       background-color: $secondary-hover-color;
