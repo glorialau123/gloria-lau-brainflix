@@ -5,9 +5,9 @@ import relativeTime from "dayjs/plugin/relativeTime";
 function Comment(props) {
   dayjs.extend(relativeTime);
 
-  const selectedVideoComments = props.selectedVideo.comments;
+  const selectedVideoComments = props.selectedVideo?.comments;
 
-  const selectedVideoPerson = selectedVideoComments.map((person) => (
+  const selectedVideoPerson = selectedVideoComments?.map((person) => (
     <li className="comments__item" key={person.id}>
       <div className="comments__image"></div>
       <div className="comments__info">

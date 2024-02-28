@@ -1,7 +1,8 @@
 import "./HomePage.scss";
 import videoDetails from "../../data/video-details.json";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 import Video from "../../components/Video/Video";
 import Description from "../../components/Description/Description";
@@ -10,8 +11,58 @@ import Comment from "../../components/Comment/Comment";
 import NextVideo from "../../components/NextVideo/NextVideo";
 
 function HomePage() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-  const [videos, setVideos] = useState(videoDetails);
+  const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState({});
+  //const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
+  // const [videos, setVideos] = useState(videoDetails);
+
+  const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
+
+  //get all videos from api upon first rendering
+  useEffect(() => {
+    async function getVideos() {
+      const response = await axios.get(
+        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=${apiKey}`
+      );
+      //console.log(response.data);
+      setVideos(response.data);
+    }
+
+    getVideos();
+  }, []);
+
+  //get video from an id
+  const params = useParams();
+  //console.log("Params:", params);
+  const selectedId = params.id;
+  console.log("selected id:", selectedId);
+
+  //if no id(homepage), render default video; else if provide id, render clicked video details
+  useEffect(() => {
+    async function getSelectedVideo() {
+      if (selectedId) {
+        const response = await axios.get(
+          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${selectedId}?api_key=2b84cfb1-23e0-4634-92f4-3d60e907dfbc`
+        );
+        setSelectedVideo(response.data);
+      } else {
+        const response = await axios.get(
+          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=2b84cfb1-23e0-4634-92f4-3d60e907dfbc`
+        );
+        setSelectedVideo(response.data);
+      }
+    }
+    getSelectedVideo();
+  }, [selectedId]);
+
+  //want clicked video to show correct id in url(params); want a function that takes
+
+  // const nextVideoClick = async (selectedId) => {
+  //   const response = await axios.get(
+  //     `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${selectedId}?api_key=2b84cfb1-23e0-4634-92f4-3d60e907dfbc`
+  //   );
+  //   setSelectedVideo(response.data);
+  // };
 
   return (
     <div className="homepage">
@@ -27,6 +78,7 @@ function HomePage() {
           setVideos={setVideos}
           selectedVideo={selectedVideo}
           setSelectedVideo={setSelectedVideo}
+          // nextVideoClick={nextVideoClick}
         />
       </main>
     </div>
