@@ -82,6 +82,9 @@
       min-height: 2.5rem;
       max-height: 2.5rem;
     }
+    &--invalid {
+      border: 1px solid #d22d2d;
+    }
   }
   &__button {
     width: 100%;

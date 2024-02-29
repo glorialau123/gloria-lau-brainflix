@@ -42,12 +42,13 @@ function HomePage() {
     async function getSelectedVideo() {
       if (selectedId) {
         const response = await axios.get(
-          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${selectedId}?api_key=2b84cfb1-23e0-4634-92f4-3d60e907dfbc`
+          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${selectedId}?api_key=${apiKey}`
         );
         setSelectedVideo(response.data);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       } else {
         const response = await axios.get(
-          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=2b84cfb1-23e0-4634-92f4-3d60e907dfbc`
+          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
         );
         setSelectedVideo(response.data);
       }
@@ -70,7 +71,7 @@ function HomePage() {
       <main className="main">
         <div className="collection">
           <Description selectedVideo={selectedVideo} />
-          <Form />
+          <Form selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
           <Comment selectedVideo={selectedVideo} />
         </div>
         <NextVideo

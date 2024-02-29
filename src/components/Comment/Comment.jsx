@@ -6,8 +6,14 @@ function Comment(props) {
   dayjs.extend(relativeTime);
 
   const selectedVideoComments = props.selectedVideo?.comments;
+  // console.log(selectedVideoComments);
 
-  const selectedVideoPerson = selectedVideoComments?.map((person) => (
+  //sort comments from newest to oldest to display
+  const sortedComments = selectedVideoComments?.slice().sort((a, b) => {
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+
+  const selectedVideoPerson = sortedComments?.map((person) => (
     <li className="comments__item" key={person.id}>
       <div className="comments__image"></div>
       <div className="comments__info">

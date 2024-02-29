@@ -11,6 +11,9 @@
     width: 35%;
     border-left: 1px solid $secondary-divider-color;
   }
+  &__link {
+    text-decoration: none;
+  }
   &__item {
     display: flex;
     margin: 0 0 1rem 0;
@@ -44,7 +47,6 @@
   &__subheading {
     @include mobile-subheader-text;
     color: $primary-text-color;
-    font-size: bold;
     @include tablet {
       @include tablet-desktop-subheader-text;
     }
