@@ -1,14 +1,46 @@
 import "./UploadForm.scss";
 import { Link, useNavigate } from "react-router-dom";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
+import { useState } from "react";
 
 function UploadForm() {
   const navigate = useNavigate();
+  const [newDescription, setNewDescription] = useState("");
+  const [newTitle, setNewTitle] = useState("");
+  const [invalidTitleInput, setInvalidTitleInput] = useState("");
+  const [invalidDescriptionInput, setInvalidDescriptionInput] = useState("");
+
+  const handleChangeTitle = (event) => {
+    setNewTitle(event.target.value);
+  };
+
+  const handleChangeDescription = (event) => {
+    setNewDescription(event.target.value);
+  };
 
   function handleSubmit(event) {
     event.preventDefault();
-    alert("Your video has been uploaded!");
-    navigate("/");
+    if (newTitle && newDescription) {
+      alert("Your video has been uploaded!");
+      navigate("/");
+      setNewTitle("");
+      setNewDescription("");
+      setInvalidTitleInput("");
+      setInvalidDescriptionInput("");
+    }
+    if (newTitle && !newDescription) {
+      alert("Please enter a description!");
+      setInvalidDescriptionInput("upload__description--invalid");
+    }
+    if (!newTitle && newDescription) {
+      alert("Please enter a title!");
+      setInvalidTitleInput("upload__title--invalid");
+    }
+    if (!newTitle && !newDescription) {
+      alert("Please enter a title and description!");
+      setInvalidTitleInput("upload__title--invalid");
+      setInvalidDescriptionInput("upload__description--invalid");
+    }
   }
 
   return (
@@ -28,19 +60,23 @@ function UploadForm() {
           </label>
           <input
             type="text"
-            className="upload__title"
+            className={`upload__title ${invalidTitleInput}`}
             name="title"
             id="title"
             placeholder="Add a title to your video"
+            onChange={handleChangeTitle}
+            value={newTitle}
           />
           <label className="upload__label" htmlFor="description">
             ADD A VIDEO DESCRIPTION
           </label>
           <textarea
-            className="upload__description"
+            className={`upload__description ${invalidDescriptionInput}`}
             name="description"
             id="description"
             placeholder="Add a description to your video"
+            onChange={handleChangeDescription}
+            value={newDescription}
           ></textarea>
         </div>
       </div>
