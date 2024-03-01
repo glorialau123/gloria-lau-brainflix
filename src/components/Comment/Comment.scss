@@ -51,10 +51,24 @@
       @include tablet-desktop-subheader-text;
     }
   }
+  &__header-right {
+    display: flex;
+  }
+
   &__date {
     @include mobile-body-text;
     color: $secondary-text-color;
   }
+  &__delete {
+    margin: 0 0 0 1rem;
+    border: 1px solid $secondary-divider-color;
+    color: $primary-text-color;
+    :hover {
+      background-color: $secondary-hover-color;
+      color: $background-color;
+    }
+  }
+
   &__text {
     @include mobile-body-text;
     color: $primary-text-color;

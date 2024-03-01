@@ -34,7 +34,7 @@ function HomePage() {
   //get video from an id
   const params = useParams();
   //console.log("Params:", params);
-  const selectedId = params.id;
+  let selectedId = params.id;
   console.log("selected id:", selectedId);
 
   //if no id(homepage), render default video; else if provide id, render clicked video details
@@ -47,6 +47,7 @@ function HomePage() {
         setSelectedVideo(response.data);
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       } else {
+        // selectedId = `84e96018-4022-434e-80bf-000ce4cd12b8`;
         const response = await axios.get(
           `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
         );
@@ -72,7 +73,7 @@ function HomePage() {
         <div className="collection">
           <Description selectedVideo={selectedVideo} />
           <Form selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
-          <Comment selectedVideo={selectedVideo} />
+          <Comment selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
         </div>
         <NextVideo
           videos={videos}
