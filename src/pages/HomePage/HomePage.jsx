@@ -35,7 +35,7 @@ function HomePage() {
   const params = useParams();
   //console.log("Params:", params);
   let selectedId = params.id;
-  console.log("selected id:", selectedId);
+  console.log("selected id from params:", selectedId);
 
   //if no id(homepage), render default video; else if provide id, render clicked video details
   useEffect(() => {

@@ -16,23 +16,44 @@ function Comment(props) {
 
   const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
 
+  console.log(props.selectedVideo.id);
+
   const deleteCommentClick = (id) => {
-    // console.log(props.selectedVideo.comments);
+    console.log("before state update", props.selectedVideo);
+
+    const deleteComment = async (id) => {
+      const response = await axios.delete(
+        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${props.selectedVideo.id}/comments/${id}?api_key=${apiKey}`
+      );
+      console.log("delete comment response", response);
+    };
+    deleteComment(id);
+
     props.setSelectedVideo((oldData) => ({
       ...oldData,
       comments: props.selectedVideo?.comments?.filter((comment) => comment.id !== id),
     }));
-    // console.log("the id deleted is", id);
-    // console.log(props.selectedVideo.comments.filter((comment) => comment.id !== id));
-  };
 
-  // const deleteCommentClick = async (event) => {
-  //   console.log("delete clicked");
-  //   console.log(event.currentTarget);
-  //   // const response = await axios.delete(
-  //   //   `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${props.selectedVideo.id}/comments/${selectedCommentId}?api_key=${apiKey}`
-  //   // );
-  // };
+    console.log("the id deleted is", id);
+    // console.log(props.selectedVideo.comments.filter((comment) => comment.id !== id));
+
+    //testing
+    // props.setSelectedVideo((oldData) => {
+    //   const newComments = props.selectedVideo?.comments?.filter(
+    //     (comment) => comment.id !== id
+    //   );
+    //   console.log("New Comments:", newComments);
+
+    //   const newState = {
+    //     ...oldData,
+    //     comments: newComments,
+    //   };
+
+    //   console.log("After state update:", newState);
+
+    //   return newState;
+    // });
+  };
 
   const selectedVideoPerson = sortedComments?.map((person) => (
     <li className="comments__item" key={person.id}>
