@@ -22,7 +22,7 @@
     @include desktop {
       width: 50%;
       padding: 0;
-      margin-right: 1.5rem;
+      margin: 0 1.5rem 0 0;
     }
   }
   &__image {
@@ -44,6 +44,10 @@
       justify-content: space-between;
     }
   }
+  &__area-title,
+  &__area-description {
+    @include column-flex;
+  }
   &__title,
   &__description {
     font-family: "AvenirNext LT Pro", Verdana, Geneva, Tahoma, sans-serif;
@@ -53,6 +57,10 @@
     border: 2px solid $secondary-divider-color;
     padding: 0.5rem 1rem;
     margin: 0 0 1.5rem;
+    &:focus {
+      outline: none;
+      border: 2px solid $primary-cta-color;
+    }
     &--invalid {
       border: 1px solid #d22d2d;
     }
@@ -60,6 +68,7 @@
   &__description {
     resize: none;
     min-height: 5rem;
+
     @include desktop {
       min-height: 7rem;
       margin: 0;
@@ -96,23 +105,18 @@
     background-color: $primary-cta-color;
     color: $background-color;
     position: relative;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem 0;
     @include tablet {
       width: 22%;
     }
     @include desktop {
       width: 17%;
     }
-
     &::before {
       position: absolute;
       content: url("../../assets/icons/publish.svg");
       top: 0.5rem;
-      left: 1.5rem;
-      @include tablet {
-        top: 0.5rem;
-        left: 0.5rem;
-      }
+      left: 0.5rem;
     }
     &:hover {
       background-color: $secondary-hover-color;
@@ -126,7 +130,6 @@
       width: 22%;
     }
   }
-
   &__cancel {
     width: 100%;
     height: 100%;

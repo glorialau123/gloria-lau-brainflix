@@ -54,21 +54,21 @@
   &__header-right {
     display: flex;
   }
-
   &__date {
     @include mobile-body-text;
     color: $secondary-text-color;
   }
   &__delete {
     margin: 0 0 0 1rem;
+    padding: 0.1rem;
+    border-radius: 4px;
     border: 1px solid $secondary-divider-color;
     color: $primary-text-color;
-    :hover {
+    &:hover {
       background-color: $secondary-hover-color;
       color: $background-color;
     }
   }
-
   &__text {
     @include mobile-body-text;
     color: $primary-text-color;

@@ -76,7 +76,10 @@
     min-height: 5rem;
     padding: 0.813rem;
     width: 100%;
-
+    &:focus {
+      outline: none;
+      border: 2px solid $primary-cta-color;
+    }
     @include tablet {
       padding: 0.5rem 0;
       min-height: 2.5rem;

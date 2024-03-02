@@ -12,26 +12,28 @@ function Form(props) {
     setNewComment(event.target.value);
   };
 
-  //handleSubmit function for form
+  //handleSubmit function for form - if new value is set, post to API and re-render new comment with updated video data
   const handleSubmit = (event) => {
     event.preventDefault();
     if (newComment) {
       const postNewComment = async () => {
-        const newCommentItem = {
-          name: "User",
-          comment: newComment,
-        };
-        console.log(newCommentItem);
-        const response = await axios.post(
-          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${props.selectedVideo.id}/comments?api_key=${apiKey}`,
-          newCommentItem
-        );
-        console.log(response);
-        //render new comment by sending new request for main video data
-        props.setSelectedVideo((oldData) => ({
-          ...oldData,
-          comments: [...oldData.comments, response.data],
-        }));
+        try {
+          const newCommentItem = {
+            name: "User",
+            comment: newComment,
+          };
+          const response = await axios.post(
+            `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${props.selectedVideo.id}/comments?api_key=${apiKey}`,
+            newCommentItem
+          );
+          //show updated video data with new comment
+          props.setSelectedVideo((oldData) => ({
+            ...oldData,
+            comments: [...oldData.comments, response.data],
+          }));
+        } catch (error) {
+          console.error(error);
+        }
       };
       postNewComment();
 
@@ -43,10 +45,6 @@ function Form(props) {
       alert("Please input comment!");
     }
   };
-
-  //can select selectedVideo's id like this
-  // console.log(props.selectedVideo.id);
-  // console.log(newComment);
 
   return (
     <section className="form">

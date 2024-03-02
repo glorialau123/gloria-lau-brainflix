@@ -55,29 +55,33 @@ function UploadForm() {
           />
         </div>
         <div className="upload__area-container">
-          <label className="upload__label" htmlFor="title">
-            TITLE YOUR VIDEO
-          </label>
-          <input
-            type="text"
-            className={`upload__title ${invalidTitleInput}`}
-            name="title"
-            id="title"
-            placeholder="Add a title to your video"
-            onChange={handleChangeTitle}
-            value={newTitle}
-          />
-          <label className="upload__label" htmlFor="description">
-            ADD A VIDEO DESCRIPTION
-          </label>
-          <textarea
-            className={`upload__description ${invalidDescriptionInput}`}
-            name="description"
-            id="description"
-            placeholder="Add a description to your video"
-            onChange={handleChangeDescription}
-            value={newDescription}
-          ></textarea>
+          <div className="upload__area-title">
+            <label className="upload__label" htmlFor="title">
+              TITLE YOUR VIDEO
+            </label>
+            <input
+              type="text"
+              className={`upload__title ${invalidTitleInput}`}
+              name="title"
+              id="title"
+              placeholder="Add a title to your video"
+              onChange={handleChangeTitle}
+              value={newTitle}
+            />
+          </div>
+          <div className="upload__area-description">
+            <label className="upload__label" htmlFor="description">
+              ADD A VIDEO DESCRIPTION
+            </label>
+            <textarea
+              className={`upload__description ${invalidDescriptionInput}`}
+              name="description"
+              id="description"
+              placeholder="Add a description to your video"
+              onChange={handleChangeDescription}
+              value={newDescription}
+            ></textarea>
+          </div>
         </div>
       </div>
 

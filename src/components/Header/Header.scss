@@ -45,7 +45,6 @@
       flex-direction: row;
     }
   }
-
   &__searching {
     padding: 1rem 0;
     display: flex;
@@ -66,13 +65,16 @@
     padding: 0 0 0 2rem;
     font-family: "AvenirNext LT Pro", Verdana, Geneva, Tahoma, sans-serif;
     position: relative;
+    &:focus {
+      outline: none;
+      border: 2px solid $primary-cta-color;
+    }
   }
 
   &__search-container {
     position: relative;
     width: 83%;
     &::before {
-      // content: url("../../assets/icons/search.svg");
       content: url("../../assets/icons/search.svg");
       position: absolute;
       top: 10px;
