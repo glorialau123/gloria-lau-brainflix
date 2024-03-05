@@ -9,6 +9,9 @@ import Form from "../../components/Form/Form";
 import Comment from "../../components/Comment/Comment";
 import NextVideo from "../../components/NextVideo/NextVideo";
 
+const { REACT_APP_BACKEND_URL } = process.env;
+console.log(REACT_APP_BACKEND_URL);
+
 function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({});
@@ -19,7 +22,7 @@ function HomePage() {
   useEffect(() => {
     async function getVideos() {
       const response = await axios.get(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=${apiKey}`
+        `${REACT_APP_BACKEND_URL}/videos?api_key=${apiKey}`
       );
       setVideos(response.data);
     }
@@ -37,7 +40,7 @@ function HomePage() {
       if (selectedId) {
         try {
           const response = await axios.get(
-            `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${selectedId}?api_key=${apiKey}`
+            `${REACT_APP_BACKEND_URL}/videos/${selectedId}?api_key=${apiKey}`
           );
           setSelectedVideo(response.data);
           window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -47,7 +50,7 @@ function HomePage() {
       } else {
         try {
           const response = await axios.get(
-            `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
+            `${REACT_APP_BACKEND_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
           );
           setSelectedVideo(response.data);
         } catch (error) {
