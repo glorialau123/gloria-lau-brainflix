@@ -2,6 +2,8 @@ import "./UploadForm.scss";
 import { Link, useNavigate } from "react-router-dom";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
+import axios from "axios";
+const { REACT_APP_BACKEND_URL } = process.env;
 
 function UploadForm() {
   const navigate = useNavigate();
@@ -21,6 +23,20 @@ function UploadForm() {
   function handleSubmit(event) {
     event.preventDefault();
     if (newTitle && newDescription) {
+      const postNewVideo = async () => {
+        try {
+          const response = await axios.post(`${REACT_APP_BACKEND_URL}/videos`, {
+            title: newTitle,
+            description: newDescription,
+          });
+          console.log(response.data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      postNewVideo();
+
       alert("Your video has been uploaded!");
       navigate("/");
       setNewTitle("");
