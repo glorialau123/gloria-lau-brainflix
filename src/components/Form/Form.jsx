@@ -8,7 +8,7 @@ const { REACT_APP_BACKEND_URL } = process.env;
 function Form(props) {
   const [newComment, setNewComment] = useState("");
   const [invalidComment, setInvalidComment] = useState("");
-  const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
+  // const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
 
   const handleChangeInput = (event) => {
     setNewComment(event.target.value);

@@ -10,20 +10,17 @@ import Comment from "../../components/Comment/Comment";
 import NextVideo from "../../components/NextVideo/NextVideo";
 
 const { REACT_APP_BACKEND_URL } = process.env;
-console.log(REACT_APP_BACKEND_URL);
 
 function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({});
 
-  const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
+  // const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
 
   //get all videos from api upon first render
   useEffect(() => {
     async function getVideos() {
-      const response = await axios.get(
-        `${REACT_APP_BACKEND_URL}/videos?api_key=${apiKey}`
-      );
+      const response = await axios.get(`${REACT_APP_BACKEND_URL}/videos`);
       setVideos(response.data);
     }
 
@@ -40,7 +37,7 @@ function HomePage() {
       if (selectedId) {
         try {
           const response = await axios.get(
-            `${REACT_APP_BACKEND_URL}/videos/${selectedId}?api_key=${apiKey}`
+            `${REACT_APP_BACKEND_URL}/videos/${selectedId}`
           );
           setSelectedVideo(response.data);
           window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -50,7 +47,7 @@ function HomePage() {
       } else {
         try {
           const response = await axios.get(
-            `${REACT_APP_BACKEND_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
+            `${REACT_APP_BACKEND_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8`
           );
           setSelectedVideo(response.data);
         } catch (error) {

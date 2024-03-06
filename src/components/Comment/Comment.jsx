@@ -3,9 +3,11 @@ import "./Comment.scss";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
+const { REACT_APP_BACKEND_URL } = process.env;
+
 function Comment(props) {
   dayjs.extend(relativeTime);
-  const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
+  // const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
   const selectedVideoComments = props.selectedVideo?.comments;
 
   //sort comments from newest to oldest to display
@@ -18,7 +20,7 @@ function Comment(props) {
     const deleteComment = async (id) => {
       try {
         await axios.delete(
-          `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${props.selectedVideo.id}/comments/${id}?api_key=${apiKey}`
+          `${REACT_APP_BACKEND_URL}/videos/${props.selectedVideo.id}/comments/${id}`
         );
       } catch (error) {
         console.error(error);
