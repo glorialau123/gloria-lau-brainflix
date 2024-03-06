@@ -3,6 +3,8 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 import { useState } from "react";
 import axios from "axios";
 
+const { REACT_APP_BACKEND_URL } = process.env;
+
 function Form(props) {
   const [newComment, setNewComment] = useState("");
   const [invalidComment, setInvalidComment] = useState("");
@@ -23,7 +25,7 @@ function Form(props) {
             comment: newComment,
           };
           const response = await axios.post(
-            `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${props.selectedVideo.id}/comments?api_key=${apiKey}`,
+            `${REACT_APP_BACKEND_URL}/videos/${props.selectedVideo.id}/comments`,
             newCommentItem
           );
           //show updated video data with new comment
