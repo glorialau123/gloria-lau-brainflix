@@ -45,14 +45,22 @@ function HomePage() {
           console.error(error);
         }
       } else {
+        // setSelectedVideo(videos[0]);
         try {
-          const response = await axios.get(
-            `${REACT_APP_BACKEND_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8`
-          );
-          setSelectedVideo(response.data);
+          const response = await axios.get(`${REACT_APP_BACKEND_URL}/videos/`);
+          setSelectedVideo(response.data[0]);
         } catch (error) {
           console.error(error);
         }
+
+        // try {
+        //   const response = await axios.get(
+        //     `${REACT_APP_BACKEND_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8`
+        //   );
+        //   setSelectedVideo(response.data);
+        // } catch (error) {
+        //   console.error(error);
+        // }
       }
     }
     getSelectedVideo();
@@ -67,12 +75,7 @@ function HomePage() {
           <Form selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
           <Comment selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
         </div>
-        <NextVideo
-          videos={videos}
-          setVideos={setVideos}
-          selectedVideo={selectedVideo}
-          setSelectedVideo={setSelectedVideo}
-        />
+        <NextVideo videos={videos} selectedVideo={selectedVideo} />
       </main>
     </div>
   );

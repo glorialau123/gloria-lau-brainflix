@@ -1,5 +1,5 @@
 import "./UploadForm.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
 import axios from "axios";
@@ -59,6 +59,15 @@ function UploadForm() {
     }
   }
 
+  //handle cancel click - prevent form submission, create window confirmation pop up.
+  function handleCancel(event) {
+    event.preventDefault();
+    const confirmCancel = window.confirm("Are you sure you want to cancel?");
+    if (confirmCancel) {
+      navigate("/");
+    }
+  }
+
   return (
     <form className="upload__form" onSubmit={handleSubmit}>
       <div className="upload__container">
@@ -103,9 +112,10 @@ function UploadForm() {
 
       <div className="upload__buttons">
         <button className="upload__publish">PUBLISH</button>
-        <Link className="upload__cancel-link" to="/">
-          <button className="upload__cancel">CANCEL</button>
-        </Link>
+
+        <button className="upload__cancel" onClick={handleCancel}>
+          CANCEL
+        </button>
       </div>
     </form>
   );

@@ -7,8 +7,11 @@ const { REACT_APP_BACKEND_URL } = process.env;
 
 function Comment(props) {
   dayjs.extend(relativeTime);
+  //destructure props
+  const { selectedVideo, setSelectedVideo } = props;
+
   // const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
-  const selectedVideoComments = props.selectedVideo?.comments;
+  const selectedVideoComments = selectedVideo?.comments;
 
   //sort comments from newest to oldest to display
   const sortedComments = selectedVideoComments?.slice().sort((a, b) => {
@@ -17,21 +20,24 @@ function Comment(props) {
 
   //delete comment functionality: pass in selected comment id - delete on API and pass in new set state variable function to filter out deleted comment and re-render component due to updated state
   const deleteCommentClick = (id) => {
-    const deleteComment = async (id) => {
-      try {
-        await axios.delete(
-          `${REACT_APP_BACKEND_URL}/videos/${props.selectedVideo.id}/comments/${id}`
-        );
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    deleteComment(id);
+    const confirmDelete = window.confirm("Are you sure you want to delete this comment?");
+    if (confirmDelete) {
+      const deleteComment = async (id) => {
+        try {
+          await axios.delete(
+            `${REACT_APP_BACKEND_URL}/videos/${selectedVideo.id}/comments/${id}`
+          );
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      deleteComment(id);
 
-    props.setSelectedVideo((oldData) => ({
-      ...oldData,
-      comments: props.selectedVideo?.comments?.filter((comment) => comment.id !== id),
-    }));
+      setSelectedVideo((oldData) => ({
+        ...oldData,
+        comments: selectedVideo?.comments?.filter((comment) => comment.id !== id),
+      }));
+    }
   };
 
   //map out comment section details and structure

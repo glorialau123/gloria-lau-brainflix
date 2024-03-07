@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 
 function NextVideo(props) {
   //display videos function: filter out selected video and display rest
-  const showVideos = props.videos
+  //destructure props
+  const { videos, selectedVideo } = props;
+
+  const showVideos = videos
     .filter((video) => {
-      return video.id !== props.selectedVideo.id;
+      return video.id !== selectedVideo.id;
     })
     .map((video) => {
       return (

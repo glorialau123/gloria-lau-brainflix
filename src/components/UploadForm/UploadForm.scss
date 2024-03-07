@@ -122,21 +122,16 @@
       background-color: $secondary-hover-color;
     }
   }
-  &__cancel-link {
-    height: 2.5rem;
-    width: 30%;
-    margin-bottom: 2rem;
-    @include tablet {
-      width: 22%;
-    }
-  }
   &__cancel {
     width: 100%;
-    height: 100%;
+    margin-bottom: 2rem;
     color: $primary-cta-color;
     background: $background-color;
     &:hover {
       color: $secondary-hover-color;
+    }
+    @include tablet {
+      width: 22%;
     }
   }
 }

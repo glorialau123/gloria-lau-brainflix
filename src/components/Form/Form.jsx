@@ -8,6 +8,7 @@ const { REACT_APP_BACKEND_URL } = process.env;
 function Form(props) {
   const [newComment, setNewComment] = useState("");
   const [invalidComment, setInvalidComment] = useState("");
+  const { selectedVideo, setSelectedVideo } = props;
   // const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
 
   const handleChangeInput = (event) => {
@@ -25,11 +26,11 @@ function Form(props) {
             comment: newComment,
           };
           const response = await axios.post(
-            `${REACT_APP_BACKEND_URL}/videos/${props.selectedVideo.id}/comments`,
+            `${REACT_APP_BACKEND_URL}/videos/${selectedVideo.id}/comments`,
             newCommentItem
           );
           //show updated video data with new comment
-          props.setSelectedVideo((oldData) => ({
+          setSelectedVideo((oldData) => ({
             ...oldData,
             comments: [...oldData.comments, response.data],
           }));
@@ -41,7 +42,6 @@ function Form(props) {
 
       setNewComment("");
       setInvalidComment("");
-      alert("Commented successfully");
     } else {
       setInvalidComment("form__input--invalid");
       alert("Please input comment!");
