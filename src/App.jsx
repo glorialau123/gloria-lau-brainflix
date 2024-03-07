@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/:id" element={<HomePage />} />
+          <Route path="/videos/:id" element={<HomePage />} />
           <Route path="/upload" element={<UploadPage />} />
         </Routes>
       </BrowserRouter>

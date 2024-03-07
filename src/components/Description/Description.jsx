@@ -27,10 +27,8 @@ function Description(props) {
         </div>
       </div>
       <div className="description__text">
-        <p className="description__paragraph">{props.selectedVideo?.description}</p>
-        <p className="description__comments">
-          {props.selectedVideo.comments?.length} Comments
-        </p>
+        <p className="description__paragraph">{selectedVideo?.description}</p>
+        <p className="description__comments">{selectedVideo.comments?.length} Comments</p>
       </div>
     </section>
   );

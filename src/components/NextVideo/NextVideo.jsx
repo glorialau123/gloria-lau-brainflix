@@ -12,7 +12,7 @@ function NextVideo(props) {
     })
     .map((video) => {
       return (
-        <Link to={`/${video.id}`} key={video.id} className="videos__link">
+        <Link to={`/videos/${video.id}`} key={video.id} className="videos__link">
           <div className="videos__item">
             <img src={video.image} alt="video image" className="videos__image" />
             <div className="videos__description">
