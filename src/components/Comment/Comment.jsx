@@ -2,7 +2,7 @@ import axios from "axios";
 import "./Comment.scss";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-
+import trashcan from "../../assets/icons/trash.svg";
 const { REACT_APP_BACKEND_URL } = process.env;
 
 function Comment(props) {
@@ -53,7 +53,8 @@ function Comment(props) {
               className="comments__delete"
               onClick={() => deleteCommentClick(person.id)}
             >
-              ✖
+              <img src={trashcan} alt="trashcan" className="comments__delete-icon" />
+              {/* ✖ */}
             </button>
           </div>
         </div>
