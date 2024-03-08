@@ -71,7 +71,10 @@ function HomePage() {
       <Video selectedVideo={selectedVideo} />
       <main className="main">
         <div className="collection">
-          <Description selectedVideo={selectedVideo} />
+          <Description
+            selectedVideo={selectedVideo}
+            setSelectedVideo={setSelectedVideo}
+          />
           <Form selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
           <Comment selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
         </div>

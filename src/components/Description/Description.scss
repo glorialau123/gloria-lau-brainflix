@@ -75,6 +75,14 @@
     @include tablet {
       margin: 0 0 0 2.25rem;
     }
+    &:hover {
+      color: $background-color;
+      font-weight: bold;
+      background-color: $secondary-hover-color;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
   &__like-icon {
     margin: 0 0.5rem 0 0;
@@ -82,6 +90,7 @@
       padding: 0 0 1rem 0;
     }
   }
+
   &__text {
     color: $primary-text-color;
 
