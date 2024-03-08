@@ -72,6 +72,7 @@
   }
   &__like {
     display: flex;
+    width: fit-content;
     @include tablet {
       margin: 0 0 0 2.25rem;
     }
@@ -79,7 +80,7 @@
       color: $background-color;
       font-weight: bold;
       background-color: $secondary-hover-color;
-      padding: 0.5rem 1rem;
+      padding: 0 1rem;
       border-radius: 5px;
       cursor: pointer;
     }
