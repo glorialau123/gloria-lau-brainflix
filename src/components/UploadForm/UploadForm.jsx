@@ -1,11 +1,11 @@
 import "./UploadForm.scss";
 import { useNavigate } from "react-router-dom";
-import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
 import axios from "axios";
 const { REACT_APP_BACKEND_URL } = process.env;
 
 function UploadForm() {
+  const thumbnailURL = `${REACT_APP_BACKEND_URL}/images/upload-video-img.jpg`;
   const navigate = useNavigate();
   const [newDescription, setNewDescription] = useState("");
   const [newTitle, setNewTitle] = useState("");
@@ -74,7 +74,7 @@ function UploadForm() {
         <div className="upload__video-container">
           <p className="upload__label">VIDEO THUMBNAIL</p>
           <img
-            src={thumbnail}
+            src={thumbnailURL}
             alt="video thumbnail of runner"
             className="upload__image"
           />

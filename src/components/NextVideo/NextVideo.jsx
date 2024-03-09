@@ -1,6 +1,8 @@
 import "./NextVideo.scss";
 import { Link } from "react-router-dom";
 
+const { REACT_APP_BACKEND_URL } = process.env;
+
 function NextVideo(props) {
   //display videos function: filter out selected video and display rest
   //destructure props
@@ -14,7 +16,11 @@ function NextVideo(props) {
       return (
         <Link to={`/videos/${video.id}`} key={video.id} className="videos__link">
           <div className="videos__item">
-            <img src={video.image} alt="video image" className="videos__image" />
+            <img
+              src={`${REACT_APP_BACKEND_URL}/images/${video.image}`}
+              alt="video thumbnail"
+              className="videos__image"
+            />
             <div className="videos__description">
               <h2 className="videos__subheading">{video.title}</h2>
               <p className="videos__author">{video.channel}</p>
