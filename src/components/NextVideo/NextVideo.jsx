@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 const { REACT_APP_BACKEND_URL } = process.env;
 
 function NextVideo(props) {
-  //display videos function: filter out selected video and display rest
-  //destructure props
   const { videos, selectedVideo } = props;
-
+  
+//display videos function: filter out selected video and display rest
   const showVideos = videos
     .filter((video) => {
       return video.id !== selectedVideo.id;

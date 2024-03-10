@@ -7,10 +7,8 @@ const { REACT_APP_BACKEND_URL } = process.env;
 
 function Comment(props) {
   dayjs.extend(relativeTime);
-  //destructure props
   const { selectedVideo, setSelectedVideo } = props;
 
-  // const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
   const selectedVideoComments = selectedVideo?.comments;
 
   //sort comments from newest to oldest to display
@@ -54,7 +52,6 @@ function Comment(props) {
               onClick={() => deleteCommentClick(person.id)}
             >
               <img src={trashcan} alt="trashcan" className="comments__delete-icon" />
-              {/* ✖ */}
             </button>
           </div>
         </div>

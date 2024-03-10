@@ -11,8 +11,8 @@ function Description(props) {
   dayjs.extend(relativeTime);
   const { selectedVideo, setSelectedVideo } = props;
 
-  //add toggle like: need to use setSelectedVideo as props; need to use new state variable as classname? to check if classname has been added to add or remove likes
-  const toggleLike = async () => {
+  //add likes to a video
+  const addLike = async () => {
     try {
       const response = await axios.put(
         `${REACT_APP_BACKEND_URL}/videos/${selectedVideo.id}/likes`
@@ -37,7 +37,7 @@ function Description(props) {
             <img src={eyeIcon} alt="eye-icon" className="description__visibility-icon" />
             <p className="description__visibility-number"> {selectedVideo?.views}</p>
           </div>
-          <div className="description__like" onClick={toggleLike}>
+          <div className="description__like" onClick={addLike}>
             <img src={likeIcon} alt="like-icon" className="description__like-icon" />
             <p className="description__like-number"> {selectedVideo?.likes}</p>
           </div>

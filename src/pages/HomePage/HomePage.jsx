@@ -15,8 +15,6 @@ function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({});
 
-  // const apiKey = `2b84cfb1-23e0-4634-92f4-3d60e907dfbc`;
-
   //get all videos from api upon first render
   useEffect(() => {
     async function getVideos() {
@@ -45,22 +43,12 @@ function HomePage() {
           console.error(error);
         }
       } else {
-        // setSelectedVideo(videos[0]);
         try {
           const response = await axios.get(`${REACT_APP_BACKEND_URL}/videos/`);
           setSelectedVideo(response.data[0]);
         } catch (error) {
           console.error(error);
         }
-
-        // try {
-        //   const response = await axios.get(
-        //     `${REACT_APP_BACKEND_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8`
-        //   );
-        //   setSelectedVideo(response.data);
-        // } catch (error) {
-        //   console.error(error);
-        // }
       }
     }
     getSelectedVideo();

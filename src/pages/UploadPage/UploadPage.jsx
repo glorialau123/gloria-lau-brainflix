@@ -1,8 +1,6 @@
 import "./UploadPage.scss";
 import UploadForm from "../../components/UploadForm/UploadForm";
 
-const { REACT_APP_BACKEND_URL } = process.env;
-
 function UploadPage() {
   return (
     <div className="upload">

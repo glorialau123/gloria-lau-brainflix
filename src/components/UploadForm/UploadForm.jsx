@@ -112,7 +112,6 @@ function UploadForm() {
 
       <div className="upload__buttons">
         <button className="upload__publish">PUBLISH</button>
-
         <button className="upload__cancel" onClick={handleCancel}>
           CANCEL
         </button>
