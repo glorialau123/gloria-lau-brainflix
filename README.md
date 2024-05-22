@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Brainflix Project
+## Introduction
+This project was one of the assignments from BrainStation's Web Development Program.
+The goal of this project is to learn React and Express, implementing our own API server via a JSON file.
+It is responsive on mobile, tablet and desktop views.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Tech Stack
+The project uses Create React App, JavaScript, Sass, Node, Express.
 
-## Available Scripts
+### Functionality
+Pages:
+- Main video page
+- Video upload page
 
-In the project directory, you can run:
+Main video page:
+- A video and its associated description and comments are shown
+- Clicking on a video thumbnail on the sidebar will display the selected video's details
+- Users are able to post and delete comments, with the page reflecting the changes accordingly without refreshing the browser
 
-### `npm start`
+Video upload page:
+- Users are able to upload a new video's title and description
+- After uploading, the main video page will reflect the new video addition
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Screenshots
+Mobile:
+Main video page
+![FireShot Capture 091 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/e657a83f-cf05-4deb-839d-2828e50a720d)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Video upload page
+![FireShot Capture 092 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/669143ba-ff38-478c-ab37-2d72ffed63fb)
 
-### `npm test`
+Tablet:
+Main video page
+![FireShot Capture 094 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/57cd97cf-2eea-4320-a308-db41f6c9a692)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Video upload page
+![FireShot Capture 093 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/b36aa37f-d839-41d9-b4de-d3709bc4d056)
 
-### `npm run build`
+Desktop:
+Main video page
+![FireShot Capture 095 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/354b7245-ec93-4a20-921b-d971fb2a4244)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Video upload page
+![FireShot Capture 096 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/3b90ebf0-5dcf-4273-be97-a5d18ea22de4)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
