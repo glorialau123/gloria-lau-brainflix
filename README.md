@@ -22,25 +22,22 @@ Video upload page:
 - After uploading, the main video page will reflect the new video addition
 
 ### Screenshots
-Mobile:
-Main video page
+Mobile - Main video page
 ![FireShot Capture 091 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/e657a83f-cf05-4deb-839d-2828e50a720d)
 
-Video upload page
+Mobile - Video upload page
 ![FireShot Capture 092 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/669143ba-ff38-478c-ab37-2d72ffed63fb)
 
-Tablet:
-Main video page
+Tablet - Main video page
 ![FireShot Capture 094 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/57cd97cf-2eea-4320-a308-db41f6c9a692)
 
-Video upload page
+Tablet - Video upload page
 ![FireShot Capture 093 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/b36aa37f-d839-41d9-b4de-d3709bc4d056)
 
-Desktop:
-Main video page
+Desktop - Main video page
 ![FireShot Capture 095 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/354b7245-ec93-4a20-921b-d971fb2a4244)
 
-Video upload page
+Desktop - Video upload page
 ![FireShot Capture 096 - BrainFlix - gloria-brainflix netlify app](https://github.com/glorialau123/gloria-lau-brainflix/assets/96962463/3b90ebf0-5dcf-4273-be97-a5d18ea22de4)
 
 
