@@ -1,6 +1,6 @@
 # Brainflix Project
 ## Introduction
-This project was one of the assignments from BrainStation's Web Development Program.
+This project was one of the assignments for BrainStation's Web Development Program.
 The goal of this project is to learn React and Express, implementing our own API server via a JSON file.
 It is responsive on mobile, tablet and desktop views.
 
